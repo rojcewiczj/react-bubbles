@@ -97,3 +97,14 @@ form {
     margin-top: 16px;
   }
 }
+form > input {
+  background-color: #d1d1c9;
+  border: 0;
+  padding: 6px 0;
+  font-size: 1rem;
+  width: 200px;
+  outline: 0;
+  color: rgb(8, 2, 2);
+  border-bottom: 1px solid #2a2b15;
+  margin-right: 8px;
+}
