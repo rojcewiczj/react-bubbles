@@ -6,14 +6,18 @@ const initialColor = {
   code: { hex: "" }
 };
 
+
+
 const ColorList = ({ colors, updateColors }) => {
   console.log(colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
-console.log(colorToEdit)
+console.log("color to edit",colorToEdit)
+console.log("initial color", initialColor)
   const editColor = color => {
     setEditing(true);
     setColorToEdit(color);
+    console.log(color);
   };
 
   const saveEdit = e => {
@@ -21,10 +25,10 @@ console.log(colorToEdit)
      axiosWithAuth()
       .put(`/colors/${colorToEdit.id}`, colorToEdit)
       .then(res => {
-        updateColors(res.data);
-        setColorToEdit(initialColor);
+        console.log(res);
       })
       .catch(err => console.log(err.response));
+      
   };
   
 
